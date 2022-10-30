@@ -1,4 +1,4 @@
-import { Card, CardHeader, Avatar, Box, Typography } from '@mui/material';
+import { Card, Avatar, Box, Typography } from '@mui/material';
 import { cardStyle, classNameStyle, headerTextStyle } from './styles';
 
 export function QuestionCard({...props}) {
@@ -23,7 +23,7 @@ export function QuestionCard({...props}) {
             </Box>
           </Box>
 
-          <Typography component="p" sx={{ fontSize: '14px', color: '#495796', ml: '8px', height: '95px'}}>
+          <Typography component="p" sx={{ fontSize: '14px', color: '#000000', ml: '8px', height: '95px'}}>
             {props.comment}
           </Typography>
         </Box>
