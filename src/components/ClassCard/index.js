@@ -9,7 +9,7 @@ export function ClassCard({...props}) {
         {
           props.className ? (
             <CardContent sx={cardContentStyle}>
-              <Typography sx={{mx: '12px', mt: '32px', fontSize: '20px'}} variant="h3" component="div">
+              <Typography sx={{overflow: 'hidden', mx: '12px', mt: '32px', fontSize: '20px', boxSizing: 'border-box', position: 'relative'}} variant="h3" component="div">
                 {props.className}
               </Typography>
               <Box sx={deleteIcon}>
