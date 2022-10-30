@@ -3,7 +3,7 @@ import Paths from "./routes";
 
 function App() {
   return (
-    <div className="App">
+    <div style={{fontFamily: 'inter'}} className="App">
       <Paths />
     </div>
   );
