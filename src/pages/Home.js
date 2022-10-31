@@ -28,6 +28,9 @@ function Home() {
             <ActivityCard className="Turma 1" description="João pretende armazenar uma coleção de dados referentes a cerca de um milhão de pessoas..." daysAgo="2" attachment={"Attachment 1"} />
             <ActivityCard className="Turma 2" description="João tem uma base de dados com 500 registros imcompletos, implemente um algoritmo que preencha os dados..." daysAgo="9" attachment={"Attachment 2"} />
           </div>
+          <div style={{ marginLeft: '44px' }}>
+            <h5 style={{ fontSize: '18px', color: "#2E3760" }}>Ver todos</h5>
+          </div>
         </section>
 
         <section>
@@ -38,6 +41,9 @@ function Home() {
             <QuestionCard className="Turma 1" userName="Vinicius Costa" comment="Como consigo instalar o Java 14?" commentNumber="2" />
             <QuestionCard className="Turma 2" userName="Yago Taveiros" comment="Como consigo instalar o Python?" commentNumber="9" />
             <QuestionCard className="Turma 1" userName="Túlio Cerqueira" comment="Como consigo instalar o C/C++++++++++?" commentNumber="11" />
+          </div>
+          <div style={{ marginLeft: '44px' }}>
+            <h5 style={{ fontSize: '18px', color: "#2E3760" }}>Ver todos</h5>
           </div>
         </section>
       </main>
