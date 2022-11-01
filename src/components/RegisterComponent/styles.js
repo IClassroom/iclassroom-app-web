@@ -1,5 +1,5 @@
 export const cardStyle = {
-    width: '500px',
+    width: '100%',
     border: '1px solid #00000078',
     borderRadius: '16px',
 }
@@ -23,14 +23,12 @@ export const cardBoxStyle = {
 
 export const textFieldStyle = {
     width: '60%',
-    borderRadius: '16px',
-
+    color: "red",
 }
 
 export const buttonStyle = {
     width: '60%',
     borderRadius: '16px',
-    bgcolor: '#495796',
     marginTop: 2,
     marginBottom: 2,
 }
