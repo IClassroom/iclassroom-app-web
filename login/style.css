@@ -1,0 +1,119 @@
+.title{
+    position: absolute;
+    width: 196px;
+    height: 44px;
+    left: 46%;
+    top: 10%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    color: #2E3760;
+}
+
+.box{
+    box-sizing: border-box;
+    position: absolute;
+    width: 426px;
+    height: 418px;
+    left: 36%;
+    top:20%;
+    border: 1px solid rgba(0, 0, 0, 0.78);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 16px;
+}
+
+
+.senha{
+    width: 48px;
+    height: 19px;
+    position: absolute;
+    font-family: 'Inter';
+    font-style: normal;
+    top: 50%;
+    left:25%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.email{
+    position: absolute;
+    width: 41px;
+    height: 19px;
+    top: 35%;
+    left:25%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.criar{
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    left: 15%;
+    top: 78%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;  
+    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    color: #495796;
+    border-color: white;
+    background-color: white;
+}
+
+.login{
+    position: absolute;
+    text-align: center;
+    width: 2em;
+    height: 3em;
+    left: 60%;
+    top: 75%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    align-items: center;
+    color: #FFFFFF;    
+    position: absolute;
+    width: 96px;
+    height: 48px;
+    background: #495796;
+    border-color: #495796;
+    border-radius: 16px;
+}
+
+.text1{
+    position: absolute;
+    top: 28%;
+    left:27%;
+}
+
+.text2{
+    position: absolute;
+    top: 43%;
+    left:27%;
+}
+
+input{
+    border-radius: 16px;
+    height: 2em;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.78);
+}
