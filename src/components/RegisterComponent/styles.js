@@ -23,7 +23,6 @@ export const cardBoxStyle = {
 
 export const textFieldStyle = {
     width: '60%',
-    color: "red",
 }
 
 export const buttonStyle = {
