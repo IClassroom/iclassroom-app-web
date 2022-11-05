@@ -22,7 +22,7 @@ function Home() {
 
         <section>
           <h4 style={{fontSize: '18px', fontWeight: 'normal', margin: '0px', marginLeft: '44px', marginTop: '96px'}}>
-            Atividades em aberto
+            {"Atividades em aberto" || "Atividades pendentes"}
           </h4>
           <div style={{display: 'flex', gap: '40px', marginTop: '30px'}}>
             <ActivityCard className="Turma 1" description="João pretende armazenar uma coleção de dados referentes a cerca de um milhão de pessoas..." daysAgo="2" attachment={"Attachment 1"} />
@@ -37,7 +37,7 @@ function Home() {
           <h4 style={{fontSize: '18px', fontWeight: 'normal', margin: '0px', marginLeft: '44px', marginTop: '96px'}}>
             Dúvidas em aberto
           </h4>
-          <div style={{display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '30px'}} className="flex gap-10">
+          <div style={{display: 'grid', gridTemplateColumns:'repeat(2, 478px  )', gridTemplateRows: 'repeat(2, 1fr)', gap: '20px', marginTop: '30px'}}>
             <QuestionCard className="Turma 1" userName="Vinicius Costa" comment="Como consigo instalar o Java 14?" commentNumber="2" />
             <QuestionCard className="Turma 2" userName="Yago Taveiros" comment="Como consigo instalar o Python?" commentNumber="9" />
             <QuestionCard className="Turma 1" userName="Túlio Cerqueira" comment="Como consigo instalar o C/C++++++++++?" commentNumber="11" />
