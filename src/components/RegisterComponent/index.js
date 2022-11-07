@@ -1,4 +1,4 @@
-import { Card, Box, Container, CssBaseline, TextField, Button, createTheme, ThemeProvider } from '@mui/material';
+import { Card, styled, Box, Container, CssBaseline, TextField, Button, createTheme, ThemeProvider } from '@mui/material';
 import { cardStyle, boxStyle, titleStyle, cardBoxStyle, textFieldStyle, buttonStyle } from './styles';
 
 const Registertheme = createTheme({
@@ -8,6 +8,14 @@ const Registertheme = createTheme({
     },
   },
 });
+
+const CustomTextField = styled(TextField)(() => ({
+  width: '60%',
+  'fieldset': {
+    borderRadius: '16px',
+    border: '1px solid #00000078',
+  },
+}));
 
 export function RegisterComponent({...props}) {
   return (
@@ -20,7 +28,7 @@ export function RegisterComponent({...props}) {
             </div>
             <Card sx={cardStyle}>
               <Box component="form" noValidate sx={cardBoxStyle}>
-                <TextField sx={textFieldStyle}
+                <CustomTextField
                   margin="normal"
                   required
                   fullWidth
@@ -29,7 +37,7 @@ export function RegisterComponent({...props}) {
                   color="primary"
                   autoFocus
                 />
-                <TextField sx={textFieldStyle}
+                <CustomTextField
                   margin="normal"
                   required
                   fullWidth
@@ -38,7 +46,7 @@ export function RegisterComponent({...props}) {
                   color="primary"
                   autoFocus
                 />
-                <TextField sx={textFieldStyle}
+                <CustomTextField
                   margin="normal"
                   required
                   fullWidth
@@ -48,7 +56,7 @@ export function RegisterComponent({...props}) {
                   color="primary"
                   autoFocus
                 />
-                <TextField sx={textFieldStyle}
+                <CustomTextField
                   margin="normal"
                   required
                   fullWidth
@@ -63,7 +71,7 @@ export function RegisterComponent({...props}) {
                   fullWidth
                   variant="contained"
                 >
-                Sign In
+                Registrar-se
                 </Button>
               </Box>
             </Card>

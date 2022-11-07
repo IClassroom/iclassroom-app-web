@@ -21,10 +21,6 @@ export const cardBoxStyle = {
     alignItems: 'center',
 }
 
-export const textFieldStyle = {
-    width: '60%',
-}
-
 export const buttonStyle = {
     width: '60%',
     borderRadius: '16px',
