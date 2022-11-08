@@ -1,5 +1,8 @@
+import React from 'react';
 import { Card, styled, Box, Container, CssBaseline, TextField, Button, createTheme, ThemeProvider } from '@mui/material';
 import { cardStyle, boxStyle, titleStyle, cardBoxStyle, buttonStyle } from './styles';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import api from "../../services/api";
 
 const Registertheme = createTheme({
@@ -30,15 +33,27 @@ const handleSubmit = (event) => {
     password_confirmation: data.get('password_confirmation'),
   }
 
+  if (user.email !== user.email_confirmation) {
+    toast.error("O email está diferente do email de confirmação", {theme: "colored"});
+    return;
+  }
+
+  if (user.password !== user.password_confirmation) {
+    toast.error("A senha está diferente da senha de confirmação", {theme: "colored"});
+    return;
+  }
+
   api.post('/usuario/', {
     nome: user.nome,
     email: user.email,
     password: user.password,
   })
   .then(function (response) {
+    toast.success("Usuário criado com sucesso!", {theme: "colored"});
     console.log(response);
   })
   .catch(function (error) {
+    toast.error("Erro ao criar usuário", {theme: "colored"});
     console.log(error);
   });
 };
@@ -114,6 +129,7 @@ export function RegisterComponent({...props}) {
                 >
                 Registrar-se
                 </Button>
+                <ToastContainer />
               </Box>
             </Card>
           </Box>
