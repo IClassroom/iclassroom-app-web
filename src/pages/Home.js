@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MainHeader } from "../components/MainHeader";
 import { ClassCard } from "../components/ClassCard";
 import { QuestionCard } from "../components/QuestionCard";
 import { ActivityCard } from "../components/ActivityCard";
 import { List } from "@mui/material";
+
+import api from "../services/api";
  
 function Home() {
+  const [classes, setClasses] = useState([]);
+
+  useEffect(() => {
+    api.get('/turma', {
+      headers: {
+        Authorization: `token  b1974fdb83062e9eb140b78aa503cd06fc240334`
+      },
+    }).then(response => {
+      setClasses(response.data);
+    }).catch(error => {
+      console.log(error);
+    })
+  }, [])
+
   return (
     <div>
       <MainHeader />
@@ -15,13 +31,11 @@ function Home() {
             Turmas
           </h4>
           <List sx={{display: 'grid', gridTemplateColumns: 'repeat(4, 212px)', gap: '40px', marginTop: '30px', overflow: 'hidden'}}>
-            <ClassCard className="Turma 1" />
-            <ClassCard className="Turma 2" />
-            <ClassCard className="Turma 2" />
-            <ClassCard className="Turma 2" />
-            <ClassCard className="Turma 2" />
-            <ClassCard className="Turma 2" />
-            <ClassCard className="Turma 2" />
+            {classes.map((item) => {
+              return (
+                <ClassCard id={item.id} key={item.id} className={item.titulo} />
+              )
+            })}
             <ClassCard />
           </List>
         </section>
