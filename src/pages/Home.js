@@ -9,6 +9,7 @@ import api from "../services/api";
  
 function Home() {
   const [classes, setClasses] = useState([]);
+  const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
     api.get('/turma', {
@@ -17,6 +18,18 @@ function Home() {
       },
     }).then(response => {
       setClasses(response.data);
+    }).catch(error => {
+      console.log(error);
+    })
+  }, [])
+
+  useEffect(() => {
+    api.get('/topico', {
+      headers: {
+        Authorization: `token  b1974fdb83062e9eb140b78aa503cd06fc240334`
+      },
+    }).then(response => {
+      setQuestions(response.data);
     }).catch(error => {
       console.log(error);
     })
@@ -60,6 +73,12 @@ function Home() {
             Dúvidas em aberto
           </h4>
           <List sx={{display: 'grid', gridTemplateColumns: 'repeat(2, 478px)', gridTemplateRows: 'repeat(2, 1fr)', gap: '20px', marginTop: '30px'}}>
+            {questions.map((item) => {
+              const classNameFromId = classes.find((classItem) => classItem.id === item.turma_id);
+              return (
+                <QuestionCard id={item.id} key={item.id} userName={'Usuário Teste'} className={classNameFromId.titulo} comment={item.descricao} />
+              )
+            })}
             <QuestionCard className="Turma 1" userName="Vinicius Costa" comment="Como consigo instalar o Java 14?" commentNumber="2" />
             <QuestionCard className="Turma 2" userName="Yago Taveiros" comment="Como consigo instalar o Python?" commentNumber="9" />
             <QuestionCard className="Turma 1" userName="Túlio Cerqueira" comment="Como consigo instalar o C/C++++++++++?" commentNumber="11" />
