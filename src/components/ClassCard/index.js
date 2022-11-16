@@ -1,7 +1,8 @@
-import DeleteIcon from '@mui/icons-material/Delete';
-import AddIcon from '@mui/icons-material/Add';
 import { Box, Card, CardContent, Typography, IconButton } from '@mui/material';
+import { DeleteModal } from '../DeleteModal';
+
 import { cardStyle, cardContentStyle, deleteIcon, cardMediaStyle } from './styles';
+import AddIcon from '@mui/icons-material/Add';
 
 export function ClassCard({...props}) {
   return (
@@ -13,9 +14,7 @@ export function ClassCard({...props}) {
                 {props.className}
               </Typography>
               <Box sx={deleteIcon}>
-                <IconButton sx={{padding: 0}} aria-label="delete" size='medium'>
-                  <DeleteIcon fontSize='inherit' htmlColor='#666666' />
-                </IconButton>
+                <DeleteModal id={props.id} title="Deletar Turma" description={`Deseja mesmo deletar a turma ${props.className}?`} />
               </Box>
             </CardContent>
           ) : (
