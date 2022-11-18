@@ -10,10 +10,12 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import { logout } from "../../services/auth";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Header({ type, classTabState, setClassTabState }) {
   const [anchorEl, setAnchorEl] = useState(null);
-
+  const navigate = useNavigate();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="transparent">
@@ -77,7 +79,7 @@ function Header({ type, classTabState, setClassTabState }) {
               onClose={() => setAnchorEl(null)}
             >
               <MenuItem onClick={() => setAnchorEl(null)}>Perfil</MenuItem>
-              <MenuItem onClick={() => setAnchorEl(null)}>Sair</MenuItem>
+              <MenuItem onClick={() => {logout(); navigate("/")}}>Sair</MenuItem>
             </Menu>
           </div>
         </Toolbar>
