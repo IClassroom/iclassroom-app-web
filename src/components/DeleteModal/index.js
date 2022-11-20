@@ -18,12 +18,12 @@ export function DeleteModal({...props}) {
       },
     }).then(() => {
       window.alert(`Turma deletada com sucesso!`)
-      setTimeout(() => {
-        window.location.reload()
-      }, 1000)
+      props.setUpdate(!props.update)
     }).catch(err => {
-      console.log(err);
+      console.log(err)
     })
+    
+    handleClose()
   }
 
   return (

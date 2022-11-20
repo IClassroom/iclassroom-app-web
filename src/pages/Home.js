@@ -10,6 +10,9 @@ import api from "../services/api";
 function Home() {
   const [classes, setClasses] = useState([]);
   const [questions, setQuestions] = useState([]);
+  const [activities, setActivities] = useState([]);
+
+  const [update, setUpdate] = useState(false);
 
   useEffect(() => {
     api.get('/turma', {
@@ -21,9 +24,7 @@ function Home() {
     }).catch(error => {
       console.log(error);
     })
-  }, [])
 
-  useEffect(() => {
     api.get('/topico', {
       headers: {
         Authorization: `token  b1974fdb83062e9eb140b78aa503cd06fc240334`
@@ -33,7 +34,17 @@ function Home() {
     }).catch(error => {
       console.log(error);
     })
-  }, [])
+
+    /* api.get('/atividades', {
+      headers: {
+        Authorization: `token  b1974fdb83062e9eb140b78aa503cd06fc240334`
+      },
+    }).then(response => {
+      setActivities(response.data);
+    }).catch(error => {
+      console.log(error);
+    }) */
+  }, [update])
 
   return (
     <div>
@@ -46,7 +57,7 @@ function Home() {
           <List sx={{display: 'grid', gridTemplateColumns: 'repeat(4, 212px)', gap: '40px', marginTop: '30px', overflow: 'hidden'}}>
             {classes.map((item) => {
               return (
-                <ClassCard id={item.id} key={item.id} className={item.titulo} />
+                <ClassCard update={update} setUpdate={setUpdate} id={item?.id} key={item?.id} className={item?.titulo} />
               )
             })}
             <ClassCard />
@@ -76,7 +87,7 @@ function Home() {
             {questions.map((item) => {
               const classNameFromId = classes.find((classItem) => classItem.id === item.turma_id);
               return (
-                <QuestionCard id={item.id} key={item.id} userName={'Usuário Teste'} className={classNameFromId.titulo} comment={item.descricao} />
+                <QuestionCard id={item?.id} key={item?.id} userName={'Usuário Teste'} className={classNameFromId.titulo} comment={item.descricao} />
               )
             })}
             <QuestionCard className="Turma 1" userName="Vinicius Costa" comment="Como consigo instalar o Java 14?" commentNumber="2" />
