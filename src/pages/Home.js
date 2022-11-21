@@ -6,6 +6,7 @@ import { ActivityCard } from "../components/ActivityCard";
 import { List } from "@mui/material";
 
 import api from "../services/api";
+import { Navigate } from "react-router-dom";
  
 function Home() {
   const [classes, setClasses] = useState([]);
@@ -15,21 +16,13 @@ function Home() {
   const [update, setUpdate] = useState(false);
 
   useEffect(() => {
-    api.get('/turma', {
-      headers: {
-        Authorization: `token  b1974fdb83062e9eb140b78aa503cd06fc240334`
-      },
-    }).then(response => {
+    api.get('/turma').then(response => {
       setClasses(response.data);
     }).catch(error => {
       console.log(error);
     })
 
-    api.get('/topico', {
-      headers: {
-        Authorization: `token  b1974fdb83062e9eb140b78aa503cd06fc240334`
-      },
-    }).then(response => {
+    api.get('/topico').then(response => {
       setQuestions(response.data);
     }).catch(error => {
       console.log(error);
@@ -57,7 +50,7 @@ function Home() {
           <List sx={{display: 'grid', gridTemplateColumns: 'repeat(4, 212px)', gap: '40px', marginTop: '30px', overflow: 'hidden'}}>
             {classes.map((item) => {
               return (
-                <ClassCard update={update} setUpdate={setUpdate} id={item?.id} key={item?.id} className={item?.titulo} />
+                <ClassCard update={update} setUpdate={setUpdate} id={item?.id} key={item?.id} className={item?.titulo}/>
               )
             })}
             <ClassCard />
