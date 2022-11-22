@@ -18,10 +18,6 @@ export function CreateClassModal({...props}) {
     api.post('/turma/', {
       titulo: className,
       descricao: classDescription,
-    }, {
-      headers: {
-        Authorization: `token  b1974fdb83062e9eb140b78aa503cd06fc240334`
-      },
     }).then(response => {
       window.alert('Turma criada com sucesso!');
       props.setUpdate(!props.update);

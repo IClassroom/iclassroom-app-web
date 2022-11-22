@@ -12,11 +12,7 @@ export function DeleteModal({...props}) {
   const handleClose = () => setOpen(false)
 
   const handleDelete = () => {
-    api.delete(`/turma/${props.id}`, {
-      headers: {
-        Authorization: `token  b1974fdb83062e9eb140b78aa503cd06fc240334`
-      },
-    }).then(() => {
+    api.delete(`/turma/${props.id}`).then(() => {
       window.alert(`Turma deletada com sucesso!`)
       props.setUpdate(!props.update)
     }).catch(err => {
