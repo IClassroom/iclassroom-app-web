@@ -18,13 +18,14 @@ export function CreateClassModal({...props}) {
     api.post('/turma/', {
       titulo: className,
       descricao: classDescription,
+      professor_id: 1
     }, {
       headers: {
         Authorization: `token  b1974fdb83062e9eb140b78aa503cd06fc240334`
       },
     }).then(response => {
-      window.alert('Turma criada com sucesso!');
-      props.setUpdate(!props.update);
+      window.alert(`Turma criada com ucesso!`)
+      props.setUpdate(!props.update)
     }).catch(error => {
       console.log(error);
     })

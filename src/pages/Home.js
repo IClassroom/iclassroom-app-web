@@ -15,7 +15,7 @@ function Home() {
   const [update, setUpdate] = useState(false);
 
   useEffect(() => {
-    api.get('/turma', {
+    api.get('/turma/', {
       headers: {
         Authorization: `token  b1974fdb83062e9eb140b78aa503cd06fc240334`
       },
@@ -25,7 +25,7 @@ function Home() {
       console.log(error);
     })
 
-    api.get('/topico', {
+    api.get('/topico/', {
       headers: {
         Authorization: `token  b1974fdb83062e9eb140b78aa503cd06fc240334`
       },
@@ -60,7 +60,7 @@ function Home() {
                 <ClassCard update={update} setUpdate={setUpdate} id={item?.id} key={item?.id} className={item?.titulo} />
               )
             })}
-            <ClassCard />
+            <ClassCard update={update} setUpdate={setUpdate}/>
           </List>
         </section>
 
@@ -87,7 +87,7 @@ function Home() {
             {questions.map((item) => {
               const classNameFromId = classes.find((classItem) => classItem.id === item.turma_id);
               return (
-                <QuestionCard id={item?.id} key={item?.id} userName={'Usuário Teste'} className={classNameFromId.titulo} comment={item.descricao} />
+                <QuestionCard id={item?.id} key={item?.id} userName={'Usuário Teste'} className={classNameFromId?.titulo} comment={item?.descricao} />
               )
             })}
             <QuestionCard className="Turma 1" userName="Vinicius Costa" comment="Como consigo instalar o Java 14?" commentNumber="2" />
