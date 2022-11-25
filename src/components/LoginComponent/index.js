@@ -32,7 +32,7 @@ function LoginComponent() {
     try {
       const response = await api.post("/login/", data);
       login(response.data.token);
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       console.log("ERRO")
     }

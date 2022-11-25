@@ -79,7 +79,7 @@ function Header({ type, classTabState, setClassTabState }) {
               onClose={() => setAnchorEl(null)}
             >
               <MenuItem onClick={() => setAnchorEl(null)}>Perfil</MenuItem>
-              <MenuItem onClick={() => {logout(); navigate("/")}}>Sair</MenuItem>
+              <MenuItem onClick={() => {logout(); navigate("/login")}}>Sair</MenuItem>
             </Menu>
           </div>
         </Toolbar>
